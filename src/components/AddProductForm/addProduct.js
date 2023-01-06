@@ -7,35 +7,13 @@ import { Link } from "react-router-dom";
 import { postData } from "./../DataFetchingFuncs/dataFetching";
 
 const AddProductForm = (props) => {
-  const { products, reFetch } = props;
+  const { products } = props;
   const [type, setType] = useState("noValue");
   const [formIsValid, setFormIsVaild] = useState(false);
   const [notification, setNotification] = useState("");
 
   const submitBtn = useRef();
   const addForm = useRef();
-
-  // const postData = (temp) => {
-  //   const requestOptions = {
-  //     method: "post",
-  //     mode: "no-cors",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(temp),
-  //   };
-  //   fetch("https://e-commerce-frog.000webhostapp.com/", {
-  //     method: "post",
-  //     mode: "no-cors",
-  //     headers: {
-  //       "Access-Control-Allow-Origin": "*",
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(temp),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((recipes) => {
-  //       console.log(recipes);
-  //     });
-  // };
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -86,7 +64,7 @@ const AddProductForm = (props) => {
 
     // post data to the server
     postData(temp);
-    reFetch();
+    // reFetch();
   };
 
   const typeChangeHandler = (event) => {

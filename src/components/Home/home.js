@@ -5,22 +5,8 @@ import Product from "./../ProductCardTemp/productCardTemp";
 import { Link } from "react-router-dom";
 import { deleteData } from "../DataFetchingFuncs/dataFetching";
 const Home = (props) => {
-  const { products, reFetch } = props;
+  const { products } = props;
   const [checkedProducts, setCkeckedProducts] = useState([]);
-
-  //   const deleteData = (temp) => {
-  //     return fetch("https://e-commerce-frog.000webhostapp.com/", {
-  //       method: "post",
-  //       mode: "no-cors",
-  //       headers: {
-  //         "Access-Control-Allow-Origin": "*",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(temp),
-  //     })
-  //       .then((response) => response.json())
-  //       .then((d) => console.log(d));
-  //   };
 
   const massDeleteHandler = () => {
     let temp = {
@@ -28,7 +14,7 @@ const Home = (props) => {
       ids: checkedProducts,
     };
     deleteData(temp);
-    reFetch();
+    // reFetch();
   };
 
   const addToDeleteList = (e) => {

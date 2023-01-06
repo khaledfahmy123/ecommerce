@@ -25,17 +25,11 @@ const App = () => {
     <>
       <Router>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={<Home products={products} reFetch={reloadHandler} />}
-          />
+          <Route exact path="/" element={<Home products={products} />} />
           <Route
             exact
             path="/add-product"
-            element={
-              <AddProductForm products={products} reFetch={reloadHandler} />
-            }
+            element={<AddProductForm products={products} />}
           />
         </Routes>
       </Router>
